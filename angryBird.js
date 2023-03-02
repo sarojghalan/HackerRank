@@ -10,7 +10,7 @@ const output = arr.reduce(function(acc ,curr){
 //converting onject into array
 const outputArray = Object.entries(output)
 
-//sortung array with values of string
+//sortung array with string value
 const sortedArray = outputArray.sort((a, b) => b[1] - a[1])
 
 // getting first index from that srted array
