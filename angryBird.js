@@ -1,29 +1,18 @@
-function countBird(arr) {
-
-  let temp = [];
-  for (let i = 0; i < arr.length; i++) {
-    let count = 1;
-    //condition edi tyo element array ma xa vani condition true banauna nadine
-
-    // if(!temp.includes(arr[i])){
-    //   console.log("i am there : ",i)
-    // }
-
-    // checking value one by one
-    
-    if(!temp.includes(arr[i])){
-    
-      for(let j = i+1; j < arr.length; j++) {
-        if(arr[i] === arr[j]){
-          count++
-        }
-      }
-      // temp.push({`${arr[i]}`:count});
-    }
-    console.log(count)
+const arr = [1, 3, 3, 4, 5, 4, 3, 2, 1, 2, 4];
+const output = arr.reduce(function(acc ,curr){
+  if(acc[curr]){
+      acc[curr] = ++acc[curr]
+  }else{
+      acc[curr] = 1
   }
-  console.log("i am temp : ",temp);
-}
-countBird([1, 3, 3, 4, 5, 4, 3, 2, 1, 2, 4]);
+  return acc;
+},{});
+//converting onject into array
+const outputArray = Object.entries(output)
 
-// countng repeated element
+//sortung array with values of string
+const sortedArray = outputArray.sort((a, b) => b[1] - a[1])
+
+// getting first index from that srted array
+const result = sortedArray.find(([key, value]) => value === sortedArray[0][1])[0]
+console.log(result);
