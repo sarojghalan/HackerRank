@@ -1,12 +1,25 @@
 function PickingNumber(a) {
-  let storeElement = [];
-  for (let i = 0; i < a.length; i++) {
-    for (let j = i + 1; j < a[i].length; j++) {
-        
+  const sortedA = a.sort((a, b) => a - b);
+  let counter = 0;
+  let counterFinal = 0;
+  let i = 0;
+
+  while (i < sortedA.length) {
+    counter = 1;
+    for (let j = i + 1; j < sortedA.length; j++) {
+      if (
+        sortedA[i] - sortedA[j] === 0 ||
+        sortedA[i] - sortedA[j] === 1 ||
+        sortedA[i] - sortedA[j] === -1
+      ) {
+        counter += 1;
+      }
+      if (counter > counterFinal) counterFinal = counter;
     }
+    i++;
   }
-  console.log(a);
-  return;
+  return counterFinal;
 }
-const arr = [4, 6, 5, 3, 3, 1];
+const arr = [2, 2, 4, 8, 2, 8, 6, 8, 1, 3];
 const picked = PickingNumber(arr);
+console.log(picked);
