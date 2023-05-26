@@ -1,4 +1,4 @@
-function MagicSquare(a) {
+function MagicSquare(s) {
   // Possible cases for all 2D array
   const possibleCases = [
     [
@@ -45,6 +45,7 @@ function MagicSquare(a) {
 
   let min = 45;
   possibleCases.forEach((square) => {
+    console.log(square)
     let sum = 0;
     for (let i = 0; i < 3; i++) {
       for (let j = 0; j < 3; j++) {
