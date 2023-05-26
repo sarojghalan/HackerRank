@@ -1,5 +1,6 @@
 function PickingNumber(a) {
   const sortedA = a.sort((a, b) => a - b);
+  console.log(sortedA);
   let counter = 0;
   let counterFinal = 0;
   let i = 0;
