@@ -1,3 +1,4 @@
+// getting all alphabet
 function getAllAlphabets() {
   var alphabets = "";
   for (var j = 97; j <= 122; j++) {
@@ -7,15 +8,21 @@ function getAllAlphabets() {
 }
 
 function DesignerPDFViewer(h, word) {
+  // alphabet from a - z
+  const alphabets = getAllAlphabets();
   let temp = [];
   for (let i = 0; i < h.length; i++) {
-    if (word.includes(getAllAlphabets()[i])) {
+    // checking if word includes the alphabetic characters
+    // if includes then pushing value into temp array
+    if (word.includes(alphabets[i])) {
       temp.push(h[i]);
     }
   }
-  let rectangleArea = Math.max(...temp) * word.length;
-  console.log(rectangleArea);
-  return;
+  // finding max height from temp array
+  let maxHeight = Math.max(...temp);
+  //calculating area of rectangle with Max height and length of word
+  let rectangleArea = maxHeight * word.length;
+  return rectangleArea;
 }
 const word = "zbca";
 const array = [
