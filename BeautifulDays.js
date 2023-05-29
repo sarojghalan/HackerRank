@@ -1,13 +1,17 @@
 function BeautifulDays(i, j, k) {
   let count = 0;
   for (let a = i; a <= j; a++) {
+    // reversing a number
     let reverseNumber = a.toString().split("").reverse().join("");
-    let validDay = (a-reverseNumber)/k;
-    if(validDay === Math.floor(validDay)) {
+    // calculating valid day as given in question
+    let validDay = (a - reverseNumber) / k;
+    // checking if valid day is equal to its nearest value Math.floor ()
+    if (validDay === Math.floor(validDay)) {
       count++;
     }
   }
-  console.log(count)
+  console.log(count);
+  //returning count
   return count;
 }
 
