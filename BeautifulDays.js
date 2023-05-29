@@ -1,6 +1,14 @@
 function BeautifulDays(i, j, k) {
-  console.log(i, j, k);
-  return;
+  let count = 0;
+  for (let a = i; a <= j; a++) {
+    let reverseNumber = a.toString().split("").reverse().join("");
+    let validDay = (a-reverseNumber)/k;
+    if(validDay === Math.floor(validDay)) {
+      count++;
+    }
+  }
+  console.log(count)
+  return count;
 }
 
 const rangeStart = 20;
