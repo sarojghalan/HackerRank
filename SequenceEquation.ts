@@ -15,4 +15,4 @@ function SequenceEquation(p: number[]): number[] {
 }
 
 const array: number[] = [5, 4, 3, 2, 1];
-const result: number[] = SequenceEquation(array);
+SequenceEquation(array);
