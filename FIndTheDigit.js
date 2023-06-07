@@ -1,13 +1,13 @@
 function FindTheDigit(n) {
-    let number = n.toString();
-    let count = 0;
+  let number = n.toString();
+  let count = 0;
   console.log(n.toString());
   for (let i = 0; i < number.length; i++) {
-        if(n%number[i] === 0){
-            count++
-        }
+    if (n % number[i] === 0) {
+      count++;
+    }
   }
-  console.log(count)
+  console.log(count);
   return count;
 }
 const digit = 123;
